@@ -2,9 +2,9 @@
 
 public class knightWays {
     public static void main(String[] args) {
-        int n = 4;
+        int n = 6;
         boolean[][] board = new boolean[n][n];
-        knight(board, 0, 0, 4);
+        knight(board, 0, 0, 18);
     }
 
     static void knight(boolean[][] board, int row, int col, int knights) {
@@ -35,6 +35,26 @@ public class knightWays {
     private static boolean isSafe(boolean[][] board, int row, int col) {
         if (isValid(board, row - 2, col - 1)) {
             if (board[row - 2][col - 1]) {
+                return false;
+            }
+        }
+        if (isValid(board, row - 1, col - 2)) {
+            if (board[row - 1][col - 2]) {
+                return false;
+            }
+        }
+        if (isValid(board, row +1, col - 2)) {
+            if (board[row +1][col - 2]) {
+                return false;
+            }
+        }
+        if (isValid(board, row - 1, col +2)) {
+            if (board[row - 1][col + 2]) {
+                return false;
+            }
+        }
+        if (isValid(board, row - 1, col +2)) {
+            if (board[row - 1][col +2]) {
                 return false;
             }
         }

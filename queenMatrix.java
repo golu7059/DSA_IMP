@@ -36,13 +36,13 @@ public class queenMatrix {
             }
         }
 
-        // diagonal left
+        // diagonal left     
         int maxLeft = Math.min(row, col);
         for (int i = 1; i <= maxLeft; i++) {
             if(board[row-i][col-i]) {
                 return false;
             }
-        }
+        }   
 
         // diagonal right
         int maxRight = Math.min(row, board.length - col - 1);
